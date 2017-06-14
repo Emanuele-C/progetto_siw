@@ -14,8 +14,8 @@ public class QuadroService {
 	    }
 
 	    @Transactional
-	    public void add(final Quadro customer) {
-	        this.QuadroRepository.save(customer);
+	    public void add(final Quadro quadro) {
+	        this.QuadroRepository.save(quadro);
 	    }
 
 		public Quadro findbyId(Long id) {

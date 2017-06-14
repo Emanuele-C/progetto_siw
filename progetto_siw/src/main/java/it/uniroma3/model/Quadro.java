@@ -11,7 +11,9 @@ import javax.validation.constraints.NotNull;
 @NamedQuery(name="findAll", query="SELECT q FROM Quadro q")
 public class Quadro {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)	
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
+	
 	@NotNull
 	private String titolo;
 	@NotNull
@@ -27,10 +29,13 @@ public class Quadro {
 	@NotNull
 	private float larghezza;
 	@NotNull
-	private String autore;
+	private Autore autore;
 	
 	
 	public Quadro(){
+	}
+	public Long getId(){
+		return this.id;
 	}
 
 	public String getTitolo(){
@@ -71,10 +76,10 @@ public class Quadro {
 	public void setLarghezza(float larghezza){
 		this.larghezza= larghezza;
 	}
-	public String getAutore(){
+	public Autore getAutore(){
 		return this.autore;
 	}
-	public void setAutore(String autore){
+	public void setAutore(Autore autore){
 		this.autore=autore;
 		
 	}
